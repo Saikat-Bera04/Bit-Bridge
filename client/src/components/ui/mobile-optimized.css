@@ -1,0 +1,35 @@
+/* Mobile optimizations for better performance */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Optimize scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Optimize images */
+  img {
+    image-rendering: optimizeSpeed;
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+  /* Optimize transforms */
+  .transform {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}

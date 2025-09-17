@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Bit Bridge - Cross-Border Stablecoin Remittances</title>
+    <meta name="description" content="Experience the future of cross-border payments with Bit Bridge. Fast, secure, and affordable stablecoin remittances powered by Algorand blockchain." />
+    <meta name="author" content="Bit Bridge" />
+
+    <meta property="og:title" content="Bit Bridge - Connecting Wallets, Crossing Worlds" />
+    <meta property="og:description" content="Experience the future of cross-border payments with our decentralized stablecoin remittance platform powered by Algorand blockchain." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
+        <h2>Loading Bit Bridge...</h2>
+        <p>Please wait while the application loads.</p>
+      </div>
+    </div>
+    <script>
+      console.log("HTML loaded, starting React app...");
+      
+      // Define Buffer globally before any modules load
+      window.global = window.global || window;
+      window.Buffer = window.Buffer || {};
+      window.process = window.process || { env: {}, browser: true };
+      
+      // Prevent React DOM conflicts
+      let reactRootCreated = false;
+      
+      // Override problematic DOM methods temporarily
+      const originalRemoveChild = Node.prototype.removeChild;
+      Node.prototype.removeChild = function(child) {
+        try {
+          if (this.contains(child)) {
+            return originalRemoveChild.call(this, child);
+          }
+          return child;
+        } catch (e) {
+          console.warn('RemoveChild error prevented:', e);
+          return child;
+        }
+      };
+      
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+        if (!reactRootCreated) {
+          document.getElementById('root').innerHTML = `
+            <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; color: red;">
+              <h2>Application Error</h2>
+              <p>Error: ${e.error?.message || 'Unknown error'}</p>
+              <button onclick="window.location.reload()">Reload Page</button>
+            </div>
+          `;
+        }
+      });
+      
+      // Mark when React root is created
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => { reactRootCreated = true; }, 1000);
+      });
+    </script>
+    <script type="module">
+      // Import Buffer polyfill first
+      try {
+        const { Buffer } = await import('buffer');
+        window.Buffer = Buffer;
+        window.global = window;
+        console.log('Buffer polyfill loaded successfully');
+      } catch (error) {
+        console.error('Failed to load Buffer polyfill:', error);
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

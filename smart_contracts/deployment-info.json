@@ -1,0 +1,16 @@
+{
+  "appId": 123456789,
+  "txId": "mock-transaction-id-for-development",
+  "deployerAddress": "MOCK7DEPLOYER7ADDRESS7FOR7DEVELOPMENT7TESTING7PURPOSES",
+  "network": "TestNet",
+  "timestamp": "2025-09-17T04:58:42.000Z",
+  "explorerUrl": "https://testnet.algoexplorer.io/application/123456789",
+  "status": "mock-deployed",
+  "contractHash": "T7GD4ES7LF4ONVARTL2ME6X6MLY3MLOAPUOEOQOBKAXPMCWLPEZMTYGFTQ",
+  "instructions": [
+    "This is a mock deployment for development purposes",
+    "The contract is compiled and ready for actual deployment",
+    "Use Pera Wallet to deploy to TestNet when ready",
+    "Update this file with real values after deployment"
+  ]
+}

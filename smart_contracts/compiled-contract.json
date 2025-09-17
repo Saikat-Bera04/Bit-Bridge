@@ -1,0 +1,12 @@
+{
+  "approvalProgram": "CCACAQAmAg90b3RhbF90cmFuc2ZlcnMLaW5pdGlhbGl6ZWQxGCMSQAAJMRkjEkAABCNDIkM2GgCABXNldHVwEkAAIYAIdHJhbnNmZXISQAAbgAtnZXRfYmFsYW5jZRJAACsjQykiZygjZyJDKWQiEkQoKGQiCGeAEXRyYW5zZmVyX2V4ZWN1dGVksCJDgA1iYWxhbmNlX3F1ZXJ5sCJD",
+  "clearProgram": "CIEB",
+  "hash": "5AOJXW3HCGP2KYJD4L7F67U6L3P5CBSVXLQTFAQMQGSU2DFSS7BGIQDQDE",
+  "globalInts": 2,
+  "globalByteSlices": 2,
+  "localInts": 0,
+  "localByteSlices": 0,
+  "network": "TestNet",
+  "timestamp": "2025-09-17T08:30:22.351Z",
+  "status": "compiled"
+}

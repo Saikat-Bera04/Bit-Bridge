@@ -1,0 +1,29 @@
+{
+  "name": "algorand-remit-smart-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for Algorand Remit application",
+  "main": "deploy.js",
+  "scripts": {
+    "dev": "node dev-prepare.js",
+    "prepare": "node dev-prepare.js",
+    "deploy": "node deploy.js",
+    "deploy:simple": "node simple-deploy.js",
+    "deploy:working": "node working-deploy.js",
+    "compile": "node dev-prepare.js",
+    "test": "echo \"Smart contract tests not implemented yet\" && exit 0"
+  },
+  "keywords": [
+    "algorand",
+    "smart-contracts",
+    "remit",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "algosdk": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
