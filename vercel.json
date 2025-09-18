@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/index.html"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/client/dist/assets/$1"
+    },
+    {
+      "src": "/@vite/(.*)",
+      "dest": "/client/dist/@vite/$1"
+    },
+    {
+      "src": "/node_modules/(.*)",
+      "dest": "/client/dist/node_modules/$1"
+    }
+  ],
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ]
+}
