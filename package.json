@@ -1,0 +1,13 @@
+{
+  "name": "algorand-remit-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "dev": "cd client && npm run dev",
+    "preview": "cd client && npm run preview"
+  },
+  "workspaces": [
+    "client"
+  ]
+}
