@@ -507,7 +507,7 @@ const History = () => {
                 <div className="space-y-4">
                   {filteredTransactions.map((transaction) => {
                     const isReceived = transaction.receiver === walletAddress;
-                    const isConfirmed = transaction.confirmedRound > 0;
+                    const isConfirmed = transaction.round > 0;
                     
                     return (
                       <motion.div
@@ -577,8 +577,8 @@ const History = () => {
                           <div className="mt-4 flex items-center justify-between text-xs text-blue-300">
                             <div className="flex items-center space-x-4">
                               <span>Fee: {transaction.fee.toFixed(6)} ALGO</span>
-                              {transaction.confirmedRound > 0 && (
-                                <span>Round: {transaction.confirmedRound}</span>
+                              {transaction.round > 0 && (
+                                <span>Round: {transaction.round}</span>
                               )}
                             </div>
                             <div className="flex items-center space-x-2">
