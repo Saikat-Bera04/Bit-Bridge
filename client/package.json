@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --mode production",
-    "build:dev": "vite build --mode development",
+    "build": "tsc && vite build",
+    "build:prod": "tsc && vite build --mode production",
     "preview": "vite preview --port 3000",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "vercel-build": "npm run build"
+    "vercel-build": "npm run build:prod"
   },
   "dependencies": {
     "@perawallet/connect": "^1.4.2",
