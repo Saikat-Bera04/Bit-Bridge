@@ -31,6 +31,9 @@ export default defineConfig({
   },
   build: {
     target: 'es2022',
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         format: 'es',
@@ -56,6 +59,18 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     minify: 'terser',
     sourcemap: false
+  },
+  // Add this for Vercel deployment
+  publicDir: 'public',
+  base: '/',
+  // This helps Vercel detect the framework
+  // @ts-ignore
+  vercel: {
+    framework: 'vite',
+    buildCommand: 'npm run build',
+    outputDirectory: 'dist',
+    devCommand: 'vite --port $PORT',
+    installCommand: 'npm install'
   },
   esbuild: {
     target: 'es2022'
